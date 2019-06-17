@@ -17,3 +17,32 @@ code {
   justify-content: center;
   font-family: helvetica;
 }
+
+@media only screen and (min-width: 768px) {
+  /* tablets and desktop */
+}
+
+@media only screen and (max-width: 767px) {
+  /* phones */
+
+  h1 {
+    padding: 10px 0px;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  h1,h2,h4 {
+    text-align: center;
+  }
+
+  iframe {
+    width: 99.2vw !important;
+    height: 480px !important;
+  }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  /* portrait phones */
+}
