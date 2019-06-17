@@ -11,15 +11,22 @@ class App extends React.Component {
   }
 
   render() {
-    const {data, loading} = this.props;
+    const {data} = this.props;
 
-    if(data) {
-      console.log("Data injected into render", data);
-      console.log(loading);
-    }
     return (
-      <div className="App">
-        <p>It's Working!!!</p>
+      <div className="main-container">
+        <h1>Match Highligths</h1>
+        {data? data.map((indData, index) => {
+          return (
+            <div key={index} className="fixtures-container">
+              <h2 >{indData.competition.name}</h2>
+              <h4>{indData.title}</h4>
+              <div className="indiFixture">
+                <div className="video-container" dangerouslySetInnerHTML={{__html:indData.embed}}></div>
+              </div>
+            </div>
+            )
+        }): null}
       </div>
     )
   }
